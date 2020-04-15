@@ -28,7 +28,8 @@ class Weather extends Component {
     cityHandler = (event) => {
         this.setState({ error: '' });
         this.setState({ infoDisplay: false });
-        this.setState({ cityName: event.target.value })
+        this.setState({ cityName: event.target.value });
+        this.setState({ localTime: '' });
     }
 
     sendHandler = (e) => {
@@ -53,13 +54,13 @@ class Weather extends Component {
                     let lat = res.coord.lat;
                     let lng = res.coord.lon;
                     localTime.get(lat, lng)
-                        .then(res => res.json())// make nested fetching to get the local time
-                        .then(res => {
-                            this.setState({ localTime: res.formatted });
-                        }).catch(console.error);
+                        .then(time => time.json())// make nested fetching to get the local time
+                        .then(time => {
+                            this.setState({ localTime: time.formatted });
+                           
+                        }).catch(console.log('please try later'));
                     let getDescription = res.weather[0].description;
-                    this.setState({ imgPath: imagePath(getDescription) });
-
+                    this.setState({ imgPath: imagePath(getDescription, this.state.localTime) });
                     let degree = Number(res.main.temp) - 273.15;//Kelvin  
                     this.setState({ temp: Math.round(degree) });
 
@@ -75,7 +76,9 @@ class Weather extends Component {
                     this.setState({ description: res.weather[0].description });
                 }
             })
-            .catch(console.error)
+            .catch(() =>{
+                console('Please try later')
+            })
     }
 
     render() {
@@ -106,7 +109,7 @@ class Weather extends Component {
                             onChange={this.cityHandler}
                             value={this.state.cityName}
                             onBlur={this.cityHandler} />
-                        <button type="button" onClick={this.sendHandler}>Send</button>
+                        <button type="button" onClick={this.sendHandler}>Search</button>
                     </form>
                 </div>
                 {error && <div className="error-message"><h2>{error}</h2></div>}

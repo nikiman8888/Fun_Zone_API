@@ -1,4 +1,5 @@
-function imagePath (description){
+function imagePath (description,localTime){
+    console.log(localTime)
     if (description=== "few clouds") {
        return '/images/cloud-sun.png' ;
     } else if (description === 'scattered clouds') {
@@ -19,6 +20,8 @@ function imagePath (description){
         return '/images/moderate-rain.png';
     }else if(description === 'mist'){
         return'/images/mist.png';
+    }else if(description === 'thunderstorm'){
+        return'/images/rain-storm1.png';
     }
 }
 

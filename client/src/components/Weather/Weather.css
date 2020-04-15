@@ -21,11 +21,16 @@
     margin-right: 12px;
 }
 .input-wrapper button {
+    background-color: #659DBD;
     font-size: 20px;
     padding: 5px 20px;
-    border: none;
+    border: 2px solid #fff;
+    color: #fff;
     border-radius: 40px;
 }
 .input-wrapper button:hover{
     cursor: pointer;
+    border:2px solid #659DBD;
+    background-color: #fff;
+    color: #659DBD;
 }
