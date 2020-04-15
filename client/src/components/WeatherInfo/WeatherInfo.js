@@ -9,16 +9,22 @@ function WeatherInfo(props) {
 
         <div className="weather-info-wrapper">
             <div className="city-time-wrapper">
-                {props.localTime}
+                <h2>{props.cityName.toUpperCase()}</h2>
+                {props.localTime && <p>Local time: {props.localTime.substring(0, props.localTime.length - 3)}</p> }
+               
             </div>
-            <div className="img-descript-wrapper">
-                <img src={props.imgPath} alt="weather" />
-                <p className="description">{props.description.substring(0, 1).toUpperCase() + props.description.substring(1)}</p>
+            <div className="display-info-wrapper">
+                <div className="img-descript-wrapper">
+                    <img src={props.imgPath} alt="weather" />
+                    <p className="description">{props.description.substring(0, 1).toUpperCase() + props.description.substring(1)}</p>
+                </div>
+                <div className="diagnostic-wrapper">
+                <p >Temperature: {props.temp}&deg;</p>
+                <p >Feels like: {props.feelsLike}&deg;</p>
+                <p >Wind speed: {props.windSpeed}</p>
+                <p >Humidity: {props.humidity}</p>
+                </div>              
             </div>
-            <p className="temp-wrapper">Temperature: {props.temp}&deg;</p>
-            <p className="temp-wrapper-feels-like">Feels like: {props.feelsLike}&deg;</p>
-            <p className="wind-wrapper">Wind speed: {props.windSpeed}</p>
-            <p className="humidity-wrapper">Humidity: {props.humidity}</p>
         </div>
     )
 }
