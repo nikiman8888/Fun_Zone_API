@@ -1,0 +1,40 @@
+.navigation-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #659DBD;
+    border-bottom: 2px solid #DAAD86;
+}
+
+.navigation-wrapper h1 {
+    margin: 0;
+    color: #fff;
+}
+.name {
+    margin: 15px;
+}
+.navbar {
+    margin: 15px;
+    position: relative;
+    right: 30px;
+}
+.navbar  ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+.navbar  ul li{
+   margin-left: 40px ;
+}
+
+.navbar a {
+    padding: 7px 18px;
+    border-radius: 3px;
+}
+.navbar a:hover{
+    background-color: #DAAD86;
+    
+  }
+.navbar a:active{
+    background-color: #DAAD86;
+}
