@@ -22,6 +22,8 @@ function imagePath (description,localTime){
         return'/images/mist.png';
     }else if(description === 'thunderstorm'){
         return'/images/rain-storm1.png';
+    }else if(description === 'heavy intensity rain'){
+        return '/images/rain.png';
     }
 }
 

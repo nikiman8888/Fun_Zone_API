@@ -31,7 +31,7 @@ function Home() {
                     </p>
                 </section>
                 <section className="third-section">
-                    <Link to ="/zodiac"><img src='/images/zodiac1.png' alt="info" /></Link>             
+                    <Link to ="/horoscope"><img src='/images/zodiac1.png' alt="info" /></Link>             
                     <p>
                         Horoscoope API - is a monthly live prediction.
                         Choose your zodiac sign and get some information about 

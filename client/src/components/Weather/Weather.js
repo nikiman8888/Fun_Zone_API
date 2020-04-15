@@ -46,21 +46,24 @@ class Weather extends Component {
             .then(res => {
                 if (res.message === 'city not found') { //if not found city set the error msg
                     this.setState({ error: `${city} city not found!`.toUpperCase() })
+                    this.setState({ loading: false });
                     return;
                 } else {
-                    this.setState({ loading: false })
-
-                    this.setState({ infoDisplay: true });
                     let lat = res.coord.lat;
                     let lng = res.coord.lon;
                     localTime.get(lat, lng)
                         .then(time => time.json())// make nested fetching to get the local time
                         .then(time => {
                             this.setState({ localTime: time.formatted });
-                           
-                        }).catch(console.log('please try later'));
+
+                        })
+                        .catch(console.error);
+                    this.setState({ loading: false });
+                    this.setState({ infoDisplay: true });
+
                     let getDescription = res.weather[0].description;
                     this.setState({ imgPath: imagePath(getDescription, this.state.localTime) });
+
                     let degree = Number(res.main.temp) - 273.15;//Kelvin  
                     this.setState({ temp: Math.round(degree) });
 
@@ -76,7 +79,7 @@ class Weather extends Component {
                     this.setState({ description: res.weather[0].description });
                 }
             })
-            .catch(() =>{
+            .catch(() => {
                 console('Please try later')
             })
     }
@@ -100,7 +103,7 @@ class Weather extends Component {
             <div className="weather-wrapper">
                 <h1>Weather Page</h1>
                 <div className="input-wrapper">
-                    <form>
+                    <form onSubmit = {this.sendHandler}>
                         <label htmlFor="city">Enter the City</label>
                         <input type="text"
                             id="city" required
@@ -109,7 +112,7 @@ class Weather extends Component {
                             onChange={this.cityHandler}
                             value={this.state.cityName}
                             onBlur={this.cityHandler} />
-                        <button type="button" onClick={this.sendHandler}>Search</button>
+                        <button type="submit" >Search</button>
                     </form>
                 </div>
                 {error && <div className="error-message"><h2>{error}</h2></div>}
