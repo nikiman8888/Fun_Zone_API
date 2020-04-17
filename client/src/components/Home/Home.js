@@ -31,11 +31,10 @@ function Home() {
                     </p>
                 </section>
                 <section className="third-section">
-                    <Link to ="/horoscope"><img src='/images/zodiac1.png' alt="info" /></Link>             
+                    <Link to ="/rates"><img src='/images/currency.png' alt="info" /></Link>             
                     <p>
-                        Horoscoope API - is a monthly live prediction.
-                        Choose your zodiac sign and get some information about 
-                        what you can expect this month.
+                        You can check daily  exchange rates for the most pupular
+                        currency.Currency converter.
                                            
                     </p>
                 </section>

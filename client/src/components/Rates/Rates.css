@@ -1,0 +1,64 @@
+.rates-wrapper {  
+        display: flex;
+        flex-flow: column;
+        align-items: center;  
+}
+
+.rates-wrapper h1 {
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+.rates-wrapper form {
+    margin-top: 40px;
+    width:90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.rates-wrapper label {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.rates-wrapper input{
+    font-size: 38px;
+    border: none;
+    border-radius: 5px;
+}
+.rates-wrapper select {
+    font-size: 30px;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+}
+.rates-wrapper select,.rates-wrapper option {
+    color: #659DBD;
+}
+.rates-wrapper select:hover,.rates-wrapper option:hover {
+    cursor: pointer;
+}
+
+.rates-wrapper form div{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+} 
+.rates-wrapper form  button {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top: 29px;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    background: #659DBD;
+    font-size: 20px;
+    color: #fff;
+}
+.rates-wrapper button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #659DBD;
+}
+.rates-wrapper button:active {
+    background-color: #DAAD86;
+}

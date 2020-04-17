@@ -14,7 +14,7 @@ function Navigation() {
                     <li><Link to = "/">Home</Link></li>
                     <li><Link to = "/weather">Weather</Link></li>
                     <li><Link to = "/">Logic Games</Link></li>
-                    <li><Link to = "/horoscope">Horoscope</Link></li>
+                    <li><Link to = "/Rates">Currency Converter</Link></li>
                 </ul>
             </div>
         </div>
